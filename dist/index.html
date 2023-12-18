@@ -48,55 +48,69 @@
 </div>
 
 <!-- Optional: Add navigation buttons -->
-<button id="prev-button" onclick="prevSlide()">&#10094;</button>
-<button id="next-button" onclick="nextSlide()">&#10095;</button>
+<button id="prev-button">&#10094;</button>
+<button id="next-button">&#10095;</button>
 
 <script>
   let currentIndex = 0;
   const numImages = 9;
+  const imageContainer = document.getElementById('image-container');
+  let isScrolling = false;
 
   function initializeCarousel() {
-    const imageContainer = document.getElementById('image-container');
     const cloneImages = imageContainer.cloneNode(true);
     imageContainer.appendChild(cloneImages);
   }
 
   function showSlide(index) {
-    const imageContainer = document.getElementById('image-container');
     const imageWidth = document.querySelector('.carousel-image').offsetWidth;
     const newPosition = -index * imageWidth;
-
+    imageContainer.style.transition = 'transform 0.5s ease-in-out';
     imageContainer.style.transform = `translateX(${newPosition}px)`;
     currentIndex = index;
   }
 
-  function nextSlide() {
-    currentIndex++;
-    showSlide(currentIndex);
+  function updateIndex(direction) {
+    if (!isScrolling) {
+      isScrolling = true;
+      currentIndex += direction;
+      const isEnd = currentIndex === numImages * 2 - 1 || currentIndex === numImages - 1;
 
-    if (currentIndex === numImages * 2 - 1) {
-      setTimeout(() => {
-        currentIndex = numImages;
+      if (isEnd) {
+        imageContainer.style.transition = 'none';
+        currentIndex = direction === 1 ? numImages : numImages * 2 - 2;
         showSlide(currentIndex);
-      }, 500); // Adjust the delay based on your transition duration
+        setTimeout(() => {
+          imageContainer.style.transition = 'transform 0.5s ease-in-out';
+          showSlide(currentIndex);
+          isScrolling = false;
+        }, 0);
+      } else {
+        showSlide(currentIndex);
+        setTimeout(() => {
+          isScrolling = false;
+        }, 500); // Adjust the delay based on your transition duration
+      }
     }
   }
 
-  function prevSlide() {
-    currentIndex--;
-    showSlide(currentIndex);
+  // Event listeners for navigation buttons
+  document.getElementById('prev-button').addEventListener('click', () => updateIndex(-1));
+  document.getElementById('next-button').addEventListener('click', () => updateIndex(1));
 
-    if (currentIndex === numImages - 1) {
-      setTimeout(() => {
-        currentIndex = numImages * 2 - 2;
-        showSlide(currentIndex);
-      }, 500); // Adjust the delay based on your transition duration
+  // Event listener for wheel scrolling
+  document.getElementById('carousel-container').addEventListener('wheel', (event) => {
+    event.preventDefault();
+    if (event.deltaY < 0) {
+      updateIndex(-1); // Scroll up
+    } else {
+      updateIndex(1); // Scroll down
     }
-  }
+  });
 
   // Optional: Auto-play the carousel
   initializeCarousel();
-  setInterval(nextSlide, 2000); // Change the interval as needed
+  setInterval(() => updateIndex(1), 2000); // Change the interval as needed
 </script>
 
 </body>
