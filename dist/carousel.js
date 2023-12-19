@@ -2,15 +2,15 @@ document.addEventListener('DOMContentLoaded', function () {
   let currentIndex = 0;
   const numImages = 7;
   const imageContainer = document.getElementById('image-container');
-  const blueBackground = document.querySelector('.bg-blue-300');
+  const hoverPauseArea = document.getElementById('hover-pause-area');
   let isHovered = false;
 
   // Event listeners for hover
-  blueBackground.addEventListener('mouseenter', function () {
+  hoverPauseArea.addEventListener('mouseenter', function () {
     isHovered = true;
   });
 
-  blueBackground.addEventListener('mouseleave', function () {
+  hoverPauseArea.addEventListener('mouseleave', function () {
     isHovered = false;
   });
 
