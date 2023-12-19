@@ -719,6 +719,10 @@ video {
   display: none;
 }
 
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -803,6 +807,10 @@ video {
   max-width: 28rem;
 }
 
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -861,6 +869,10 @@ video {
   gap: 1rem;
 }
 
+.gap-6 {
+  gap: 1.5rem;
+}
+
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
@@ -901,6 +913,10 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(-1px * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(-1px * var(--tw-space-y-reverse));
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .rounded-md {
@@ -1134,6 +1150,11 @@ video {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 
 .p-4 {
@@ -1480,9 +1501,19 @@ video {
   }
 }
 
+@media (min-width: 400px) {
+  .min-\[400px\]\:flex-row {
+    flex-direction: row;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:ml-auto {
     margin-left: auto;
+  }
+
+  .sm\:w-full {
+    width: 100%;
   }
 
   .sm\:grid-cols-2 {
@@ -1542,9 +1573,26 @@ video {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .md\:text-xl\/relaxed {
+    font-size: 1.25rem;
+    line-height: 1.625;
+  }
 }
 
 @media (min-width: 1024px) {
+  .lg\:order-last {
+    order: 9999;
+  }
+
+  .lg\:grid-cols-\[1fr_500px\] {
+    grid-template-columns: 1fr 500px;
+  }
+
+  .lg\:gap-12 {
+    gap: 3rem;
+  }
+
   .lg\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1564,6 +1612,11 @@ video {
     font-size: 3.75rem;
     line-height: 1;
   }
+
+  .lg\:text-base\/relaxed {
+    font-size: 1rem;
+    line-height: 1.625;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -1571,8 +1624,17 @@ video {
     height: 100vh;
   }
 
+  .xl\:grid-cols-\[1fr_550px\] {
+    grid-template-columns: 1fr 550px;
+  }
+
   .xl\:py-48 {
     padding-top: 12rem;
     padding-bottom: 12rem;
+  }
+
+  .xl\:text-xl\/relaxed {
+    font-size: 1.25rem;
+    line-height: 1.625;
   }
 }
