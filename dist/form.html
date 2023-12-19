@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body style="background: url('img/n64_form_background.png') center center / cover;">
+    <main class="flex flex-col items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div
+          class="border text-card-foreground w-full max-w-md p-6 mx-auto bg-white rounded-xl shadow-md space-y-4"
+          data-v0-t="card"
+        >
+          <div class="flex flex-col space-y-1.5 p-6">
+            <div class="text-center">
+              <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Join our Nintendo 64 Fan Club</h2>
+              <p class="mt-2 text-center text-sm text-gray-600">
+                If you're a fan of the classic Nintendo 64 console, you've come to the right place!
+              </p>
+            </div>
+          </div>
+          <div class="p-6">
+            <form class="mt-8 space-y-6">
+              <div class="rounded-md shadow-sm -space-y-px">
+                <div>
+                  <label
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="first-name"
+                  >
+                    First name
+                  </label>
+                  <input
+                    class="h-10 bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    id="first-name"
+                    placeholder="Mario"
+                    required=""
+                  />
+                </div>
+                <div>
+                  <label
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="last-name"
+                  >
+                    Last name
+                  </label>
+                  <input
+                    class="h-10 bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    id="last-name"
+                    placeholder="Luigi"
+                    required=""
+                  />
+                </div>
+                <div>
+                  <label
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="email-address"
+                  >
+                    Email address
+                  </label>
+                  <input
+                    class="h-10 bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    id="email-address"
+                    placeholder="mario@example.com"
+                    required=""
+                  />
+                </div>
+                <div>
+                  <label
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    for="password"
+                  >
+                    Password
+                  </label>
+                  <input
+                    class="h-10 bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    id="password"
+                    placeholder="********"
+                    required=""
+                  />
+                </div>
+              </div>
+              <div>
+                <button
+                  class="items-center ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  type="submit"
+                >
+                <a href="index.html">Join the Club</a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="ml-2 h-4 w-4"
+                >
+                  <line x1="6" x2="10" y1="12" y2="12"></line>
+                  <line x1="8" x2="8" y1="10" y2="14"></line>
+                  <line x1="15" x2="15.01" y1="13" y2="13"></line>
+                  <line x1="18" x2="18.01" y1="11" y2="11"></line>
+                  <rect width="20" height="12" x="2" y="6" rx="2"></rect>
+                </svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+</body>
+</html>
